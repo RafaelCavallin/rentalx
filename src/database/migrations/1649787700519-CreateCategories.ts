@@ -1,5 +1,4 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
-import { Table } from "typeorm/schema-builder/table/Table";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateCategories1649787700519 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
@@ -20,7 +19,7 @@ export class CreateCategories1649787700519 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "created_at",
+                        name: "create_at",
                         type: "timestamp",
                         default: "now()",
                     },

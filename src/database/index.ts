@@ -1,7 +1,6 @@
 /* import { createConnection } from "typeorm";
 
 createConnection(); */
-
 import { createConnection, getConnectionOptions } from "typeorm";
 
 interface IOptions {
