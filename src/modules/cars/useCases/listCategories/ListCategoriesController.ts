@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
+import { container } from "tsyringe";
 
 import { ListCategoriesUseCase } from "./ListCategoriesUseCase";
 
 class ListCategoriesController {
-    // eslint-disable-next-line prettier/prettier
-    constructor(private listCategoryUseCase: ListCategoriesUseCase) { }
+    async handle(reques: Request, response: Response): Promise<Response> {
+        const listCategoriesUseCase = container.resolve(ListCategoriesUseCase);
 
-    handle(reques: Request, response: Response): Response {
-        const all = this.listCategoryUseCase.execute();
+        const all = await listCategoriesUseCase.execute();
 
         return response.json(all);
     }
