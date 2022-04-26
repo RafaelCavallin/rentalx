@@ -4,7 +4,7 @@ import { container } from "tsyringe";
 import { ListCategoriesUseCase } from "./ListCategoriesUseCase";
 
 class ListCategoriesController {
-    async handle(reques: Request, response: Response): Promise<Response> {
+    async handle(request: Request, response: Response): Promise<Response> {
         const listCategoriesUseCase = container.resolve(ListCategoriesUseCase);
 
         const all = await listCategoriesUseCase.execute();
